@@ -250,7 +250,7 @@ class IntlPhoneField extends StatefulWidget {
   final TextMagnifierConfiguration? magnifierConfiguration;
 
   const IntlPhoneField({
-    Key? key,
+    super.key,
     this.formFieldKey,
     this.initialCountryCode,
     this.languageCode = 'en',
@@ -288,7 +288,7 @@ class IntlPhoneField extends StatefulWidget {
     this.cursorColor,
     this.disableLengthCheck = false,
     this.flagsButtonPadding = EdgeInsets.zero,
-    this.invalidNumberMessage = 'Invalid Mobile Number',
+    this.invalidNumberMessage = 'Invalid mobile number',
     this.cursorHeight,
     this.cursorRadius = Radius.zero,
     this.cursorWidth = 2.0,
@@ -296,7 +296,7 @@ class IntlPhoneField extends StatefulWidget {
     this.pickerDialogStyle,
     this.flagsButtonMargin = EdgeInsets.zero,
     this.magnifierConfiguration,
-  }) : super(key: key);
+  });
 
   @override
   State<IntlPhoneField> createState() => _IntlPhoneFieldState();
@@ -431,7 +431,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
         if (!widget.disableLengthCheck) {
           return value.length >= _selectedCountry.minLength && value.length <= _selectedCountry.maxLength
               ? null
-              : widget.invalidNumberMessage;
+              : "Number must be at least ${_selectedCountry.minLength} digits long";
         }
 
         return validatorMessage;
