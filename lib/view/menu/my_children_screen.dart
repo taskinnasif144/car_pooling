@@ -53,7 +53,7 @@ class MyChildrenScreen extends StatelessWidget {
                       return const SizedBox.shrink();
                     }
                     final child = controller.myChildrenList[index];
-                    return ChildCard(
+                    return ChildCard( 
                       el: child,
                       onTapDelete: () {
                         // Consider adding confirmation dialog before deleting
@@ -132,6 +132,7 @@ class MyChildrenScreen extends StatelessWidget {
 void showDeleteConfirmationDialog({
   required VoidCallback onDelete,
   required String title,
+  
 }) {
   showDialog(
     context: Get.context!,

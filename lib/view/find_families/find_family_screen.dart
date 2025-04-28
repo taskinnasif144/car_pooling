@@ -15,7 +15,10 @@ class FindFamilyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar1(AppLocalizations.of(context)!.findFamilies , hasBack: false),
+      appBar: customAppBar1(
+        AppLocalizations.of(context)!.findFamilies,
+        hasBack: false,
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
         child: Column(
@@ -24,10 +27,15 @@ class FindFamilyScreen extends StatelessWidget {
             CustomInputField(
               controller: controller.familySearchController,
               prefixIcon: AppIcons.serchIcon,
-              hintText: "${"Search name, email or phone" }...",
+              hintText: "${"Search name, email or phone"}...",
             ),
-            SizedBox(height: 4,),
-            Text(AppLocalizations.of(context)!.typeAName10DigitPhoneNumberOrEmailAddressToSearch, style: AppStyle.smallRegular,),
+            SizedBox(height: 4),
+            Text(
+              AppLocalizations.of(
+                context,
+              )!.typeAName10DigitPhoneNumberOrEmailAddressToSearch,
+              style: AppStyle.smallRegular,
+            ),
             SizedBox(height: 12.h),
             Obx(() {
               return Column(
