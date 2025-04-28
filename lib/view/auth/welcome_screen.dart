@@ -17,61 +17,65 @@ class WelcomeScreen extends StatelessWidget {
       body: SafeArea(
         child: SizedBox(
           width: Get.width,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                padding: EdgeInsets.only(
-                  top: 32.h,
-                  bottom: 48.h,
-                  left: 20.w,
-                  right: 20.w,
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+              children: [
+                Center(
+                  child: Image.asset("assets/common/logo.png", height: 88.h),
                 ),
-                width: Get.width,
-                decoration: BoxDecoration(color: AppColors.white),
 
-                child: Column(
-                  spacing: 16.h,
+                Column(
+                  spacing: 12,
                   crossAxisAlignment: CrossAxisAlignment.start,
-
                   children: [
-                    Image.asset("assets/common/logo.png"),
-                    SizedBox(height: 64.h),
-                    Text(
-                      AppLocalizations.of(context)!.howItWorks ,
-                      style: AppStyle.headerRegular3.copyWith(
-                        color: AppColors.primaryDark,
-                        fontSize: 28.sp
+                    Center(
+                      child: Text(
+                        AppLocalizations.of(context)!.howItWorks,
+                        style: AppStyle.headerRegular3.copyWith(
+                          color: AppColors.primaryDark,
+                          fontSize: 28.sp,
+                        ),
                       ),
                     ),
-
                     buildSteps(
                       step: 1,
-                      body: AppLocalizations.of(context)!.createACarpoolBetweenTwoPoints ,
+                      body:
+                          AppLocalizations.of(
+                            context,
+                          )!.createACarpoolBetweenTwoPoints,
                     ),
                     buildSteps(
                       step: 2,
-                      body: AppLocalizations.of(context)!.inviteYourFriendsToCarpoolWithYou ,
+                      body:
+                          AppLocalizations.of(
+                            context,
+                          )!.inviteYourFriendsToCarpoolWithYou,
                     ),
                     buildSteps(
                       step: 3,
-                      body: AppLocalizations.of(context)!.friendsJoinAndAddTheirChildSLocation ,
+                      body:
+                          AppLocalizations.of(
+                            context,
+                          )!.friendsJoinAndAddTheirChildSLocation,
                     ),
                     buildSteps(
                       step: 4,
                       body:
-                          AppLocalizations.of(context)!.parentsVolunteerToDriveWeSendRemindersAndOptimizedRoutes
-                               ,
+                          AppLocalizations.of(
+                            context,
+                          )!.parentsVolunteerToDriveWeSendRemindersAndOptimizedRoutes,
                     ),
-                    CustomButton(
-                      buttonTitle: AppLocalizations.of(context)!.next ,
-                      onTap: () => Get.toNamed(AppRoutes.welcomeScreen2),
-                    ),
-                  
                   ],
                 ),
-              ),
-            ],
+                CustomButton(
+                  buttonTitle: AppLocalizations.of(context)!.next,
+                  onTap: () => Get.toNamed(AppRoutes.welcomeScreen2),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -84,7 +88,7 @@ class WelcomeScreen extends StatelessWidget {
       spacing: 8.h,
       children: [
         Text(
-          "${"Step" } - 0$step",
+          "${"Step"} - 0$step",
           style: AppStyle.largeMedium.copyWith(color: AppColors.primaryDark),
         ),
         Text(
