@@ -4,7 +4,6 @@ import 'package:car_pooling/core/constant/app_colors.dart';
 import 'package:car_pooling/core/constant/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   final Function(int) onChanged;

@@ -1,9 +1,9 @@
+import 'package:car_pooling/core/common/package_extensions/IntlPhoneField/intl_phone_field.dart';
 import 'package:car_pooling/core/constant/app_colors.dart';
 import 'package:car_pooling/core/constant/app_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 
 class CustomPhoneInputField extends StatelessWidget {
   const CustomPhoneInputField({
@@ -29,6 +29,7 @@ class CustomPhoneInputField extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
           child: IntlPhoneField(
+            
             inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             decoration: InputDecoration(
               border: InputBorder.none,
@@ -39,7 +40,7 @@ class CustomPhoneInputField extends StatelessWidget {
               if (phone != null) {
                 if (phone.number.isEmpty) {
                   return 'Phone number is required!';
-                } else if (phone.number.length > 11 && !phone.isValidNumber()) {
+                } else if ( !phone.isValidNumber()) {
                   return 'Enter a valid phone number.';
                 }
               }
@@ -48,6 +49,14 @@ class CustomPhoneInputField extends StatelessWidget {
             keyboardType: TextInputType.number,
             initialCountryCode: 'TR', // Contry code for Turkey
             onChanged: (phone) {
+              //  if (!RegExp(r'^\d+$').hasMatch(phone.number)) {
+              //   print("detecting laters");
+              //   controller.text = '';
+              //   showCustomSnackBar('Please enter only numbers.', isError: true);
+                
+              // } else {
+              //   controller.text = phone.completeNumber;
+              // }
               // saving the phone number in the controller
               controller.text = phone.completeNumber;
             },

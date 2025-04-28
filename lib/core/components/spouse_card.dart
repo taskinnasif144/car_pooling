@@ -1,7 +1,5 @@
-import 'package:car_pooling/core/constant/app_colors.dart';
 import 'package:car_pooling/core/constant/app_icons.dart';
 import 'package:car_pooling/core/constant/app_style.dart';
-import 'package:car_pooling/core/helper/app_routes.dart';
 import 'package:car_pooling/core/wrappers/card_wrapper.dart';
 import 'package:car_pooling/model/spouse_model.dart';
 import 'package:car_pooling/view/menu/edit_child_screen.dart';

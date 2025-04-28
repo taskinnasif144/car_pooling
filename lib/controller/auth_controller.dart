@@ -60,7 +60,7 @@ class AuthController extends GetxController {
 
     if (!checkBoxStatus.value) {
       showCustomSnackBar(
-        "You must agree to the Terms & Conditions and Privacy Policy to continue",
+        "You must agree to the Terms & Conditions and Privacy Policy to continue.",
         isError: true,
       );
       return;

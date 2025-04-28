@@ -46,12 +46,12 @@ class SignUpScreen extends StatelessWidget {
                         // =================>>>>>>>>>>>>> Text Controller <<<<<<<<<<<<<===============
                         CustomInputField(
                           controller: controller.firstNameController,
-                          hintText: "First Name" ,
+                          hintText: "First name" ,
                         ),
                         SizedBox(height: 16.h),
                         CustomInputField(
                           controller: controller.lastNameController,
-                          hintText: "Last Name" ,
+                          hintText: "Last name" ,
                         ),
                         SizedBox(height: 16.h),
                         CustomInputField(

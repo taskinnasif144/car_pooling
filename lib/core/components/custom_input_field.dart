@@ -110,7 +110,7 @@ class CustomInputField extends StatelessWidget {
                       if (isEmail) {
                         if (!RegexValidators.isValidEmail(value)) {
                           // if email and not validated then the following the error will be shown
-                          return "Please Enter valid $value.";
+                          return "Please enter valid email address";
                         }
                       }
                       if (isPassword) {
