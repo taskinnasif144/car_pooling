@@ -139,10 +139,17 @@ class CreateCarpoolScreen3 extends StatelessWidget {
                           key: AppLocalizations.of(context)!.to ,
                           value: controller.endLocationController.text,
                         ),
+                      
                         buildDetails(
                           key: AppLocalizations.of(context)!.on ,
                           value:
-                              "${controller.returnDateController.text} at ${controller.timePicker.value.hour % 12}:${controller.timePicker.value.minute} ${controller.timePicker.value.period == DayPeriod.pm ? "PM" : "AM"}",
+                              "${controller.startDate.text} at ${controller.startTime.value!.hour % 12}:${controller.startTime.value!.minute} ${controller.startTime.value!.period == DayPeriod.pm ? "PM" : "AM"}",
+                        ),
+                        if(controller.isReturnTrip.value)
+                        buildDetails(
+                          key: "Return",
+                          value:
+                              "${controller.startDate.text} at ${controller.returnStartTime.value!.hour % 12}:${controller.returnStartTime.value!.minute} ${controller.returnStartTime.value!.period == DayPeriod.pm ? "PM" : "AM"}",
                         ),
                       ],
                     ),

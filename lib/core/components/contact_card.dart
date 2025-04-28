@@ -122,7 +122,7 @@ class ContactCard extends StatelessWidget {
                                     content:
                                         "Are you sure you want to delete this contact?"
                                              ,
-                                    asset: AppIcons.deleteIcon,
+                                  
                                     buttonText: "Delete" ,
                                     isConfirm: true,
                                     isDelete: true,
@@ -166,6 +166,26 @@ class ContactCard extends StatelessWidget {
                     isRed: true,
                     onTap: () {
                       // Todo: implement delete request
+                         showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return customAlertDialog(
+                                    title: "Delete invitation?" ,
+                                    content:
+                                        "Are you sure you want to delete the invitation?"
+                                             ,
+                                  
+                                    buttonText: "Delete" ,
+                                    isConfirm: true,
+                                    isDelete: true,
+                                    route:
+                                        onDelete ??
+                                        () {
+                                          Get.back();
+                                        },
+                                  );
+                                },
+                              );
                     },
                   ),
                 ),
@@ -174,6 +194,26 @@ class ContactCard extends StatelessWidget {
                     buttonTitle: "Confirm" ,
                     onTap: () {
                       // todo: implement todo confirm request
+                         showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return customAlertDialog(
+                                    title: "Confirm invitation" ,
+                                    content:
+                                        "Are you sure you want to confirm the invitation?"
+                                             ,
+                                  
+                                    buttonText: "Delete" ,
+                                    isConfirm: true,
+                               
+                                    route:
+                                        onDelete ??
+                                        () {
+                                          Get.back();
+                                        },
+                                  );
+                                },
+                              );
                     },
                   ),
                 ),

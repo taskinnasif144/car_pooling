@@ -31,7 +31,7 @@ AlertDialog customAlertDialog({
     content: Text(
       content,
       style: AppStyle.baseRegular.copyWith(color: AppColors.darkGray),
-      textAlign: TextAlign.center,
+      
     ),
     actions: [
       Row(

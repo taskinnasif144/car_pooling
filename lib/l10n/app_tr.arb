@@ -133,5 +133,6 @@
   "update": "Güncelle",
   "organizing": "Organizatör",
   "attending": "Katılımcı",
-  "driving": "Sürücü"
-  }
+  "driving": "Sürücü",
+  "type": "Type"
+}

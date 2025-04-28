@@ -49,12 +49,11 @@ class CarpoolingController extends GetxController {
 
   RxString selectedOption = "Custom".obs;
   RxBool isReturnTrip = false.obs;
-  final Rx<Time> timePicker =
-      Time(hour: DateTime.now().hour, minute: DateTime.now().minute).obs;
-  final Rx<Time> startTime =
-      Time(hour: DateTime.now().hour, minute: DateTime.now().minute).obs;
-  final Rx<Time> dropOffTime =
-      Time(hour: DateTime.now().hour, minute: DateTime.now().minute).obs;
+  final Rx<Time?> timePicker = Rx<Time?>(null);
+  final Rx<Time?> startTime = Rx<Time?>(null);
+  final Rx<Time?> dropOffTime = Rx<Time?>(null);
+  final Rx<Time?> returnStartTime = Rx<Time?>(null);
+  final Rx<Time?> returnEndTime= Rx<Time?>(null);
 
   final List<String> availableOptions = [
     "Does not repeat",
@@ -86,8 +85,17 @@ class CarpoolingController extends GetxController {
     if (!formKey.currentState!.validate()) {
       return;
     }
+    if ( startTime.value == null || dropOffTime.value == null ) {
+      showCustomSnackBar("Please select time", isError: true);
+      return;
+    } else if (startDate.text.isEmpty) {
+       showCustomSnackBar("Please select Date", isError: true);
+      return;
+    }
     Get.toNamed(AppRoutes.createCarpool3);
   }
+
+
 
   void clearController() {
     eventNameController.clear();

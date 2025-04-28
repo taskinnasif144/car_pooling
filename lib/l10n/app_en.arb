@@ -7,7 +7,7 @@
   "createACarpoolBetweenTwoPoints": "Create a carpool between two points.",
   "inviteYourFriendsToCarpoolWithYou": "Invite your friends to carpool with you.",
   "friendsJoinAndAddTheirChildSLocation": "Friends join and add their child's location.",
-  "parentsVolunteerToDriveWeSendRemindersAndOptimizedRoutes": "Parents Volunteer to Drive. We send reminders and optimized routes.",
+  "parentsVolunteerToDriveWeSendRemindersAndOptimizedRoutes": "Parents volunteer to drive. We send reminders and optimized routes.",
   "next": "Next",
   "letSSetUpAnAccount": "Let's set up an account",
   "iAgreeToHadikidS": "I agree to HadiKid's ",
@@ -54,7 +54,7 @@
   "myRole": "My Role",
   "what": "What",
   "where": "Where",
-  "wouldYouLikeToSetThisLocationAsYourHomeAddress": "Would you like to set this location as your home address?",
+  "wouldYouLikeToSetThisLocationAsYourHomeAddress": "Would you like to set the starting location as your home address?",
   "okay": "Okay",
   "later": "Later",
   "when": "When",
@@ -133,5 +133,6 @@
   "update": "Update",
   "organizing": "Organizing",
   "attending": "Attending",
-  "driving": "Driving"
+  "driving": "Driving",
+  "type": "Type"
 }

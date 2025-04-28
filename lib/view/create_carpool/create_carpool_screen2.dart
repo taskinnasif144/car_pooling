@@ -106,7 +106,7 @@ class CreateCarpoolScreen2 extends StatelessWidget {
                   SizedBox(height: 12.h),
                 if (controller.startLocationText.value.length > 3)
                   SizedBox(height: 24.h),
-                Text(AppLocalizations.of(context)!.when , style: AppStyle.largeMedium),
+                Text(AppLocalizations.of(context)!.type  , style: AppStyle.largeMedium),
                 // ==========>>>>>>>>> repeat option selector <<<<<<<<=========
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -244,11 +244,11 @@ class CreateCarpoolScreen2 extends StatelessWidget {
                 ),
                 // =========>>>>>>>> start date time <<<<<<<<<==========
                 SizedBox(height: 24.h,),
-                Text(AppLocalizations.of(context)!.starting, style: AppStyle.largeMedium ,),
+                Text(AppLocalizations.of(context)!.when, style: AppStyle.largeMedium ,),
                 SizedBox(height: 16.h,),
                CustomDateInput(
                     dateController: controller.startDate,
-                    hintText: "${"Enter Return date" }...",
+                    hintText: "${"Start date" }...",
                     isEnabled: true,
                   ),
              
@@ -261,6 +261,7 @@ class CreateCarpoolScreen2 extends StatelessWidget {
                       child: Obx(() {
                         return CustomTimeInput(
                           isEnabled: true,
+                          hintText: "Starting",
                           time: controller.startTime.value,
                           onChange: (p0) {
                             controller.startTime.value = p0;
@@ -272,6 +273,7 @@ class CreateCarpoolScreen2 extends StatelessWidget {
                       child: Obx(() {
                         return CustomTimeInput(
                           isEnabled: true,
+                          hintText: "Ending",
                           time: controller.dropOffTime.value,
                           onChange: (p0) {
                             controller.dropOffTime.value = p0;
@@ -305,15 +307,19 @@ class CreateCarpoolScreen2 extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 12.h),
-                Row(
+                    Row(
                   spacing: 16.w,
                   children: [
+                    
                     Flexible(
                       child: Obx(() {
-                        return CustomDateInput(
-                          dateController: controller.returnDateController,
-                          hintText: "${"Enter Return date" }...",
+                        return CustomTimeInput(
                           isEnabled: controller.isReturnTrip.value,
+                          hintText: "Starting",
+                          time: controller.returnStartTime.value,
+                          onChange: (p0) {
+                            controller.returnStartTime.value = p0;
+                          },
                         );
                       }),
                     ),
@@ -321,9 +327,10 @@ class CreateCarpoolScreen2 extends StatelessWidget {
                       child: Obx(() {
                         return CustomTimeInput(
                           isEnabled: controller.isReturnTrip.value,
-                          time: controller.timePicker.value,
+                          hintText: "Ending",
+                          time: controller.returnEndTime.value,
                           onChange: (p0) {
-                            controller.timePicker.value = p0;
+                            controller.returnEndTime.value = p0;
                           },
                         );
                       }),
